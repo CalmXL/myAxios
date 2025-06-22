@@ -7,6 +7,12 @@ function createInstance(config: AxiosRequestConfig): AxiosInstance {
   return context as AxiosInstance
 }
 
-const axios = createInstance({})
+const axios = createInstance({
+  method: 'get',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  validateStatus: status => status >= 200 && status < 300
+})
 
 export default axios
