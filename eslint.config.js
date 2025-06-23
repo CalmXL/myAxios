@@ -1,4 +1,4 @@
-import linter from '@antfu/eslint-config'
+import linter from '@antfu/eslint-config';
 
 export default linter({
   type: 'lib',
@@ -6,11 +6,11 @@ export default linter({
   ignores: ['**/node_modules/**', '**/dist/**', '**coverages/**'],
   rules: {
     // 圈复杂度最大为 15
-    complexity: [2, { max: 15 }],
+    'complexity': [2, { max: 15 }],
     // 要求使用 === 而不是 ==
-    eqeqeq: [2, 'always'],
+    'eqeqeq': [2, 'always'],
     // 要求使用驼峰命名法
-    camelcase: 2,
+    'camelcase': 2,
     // 允许一个变量声明多个变量
     'one-var': [2, 'never'],
     // 文件最大行数为 300
@@ -48,4 +48,4 @@ export default linter({
     // 允许无限禁用规则，设置为 0 表示关闭此规则
     'eslint-comments/no-unlimited-disable': 0
   }
-})
+});

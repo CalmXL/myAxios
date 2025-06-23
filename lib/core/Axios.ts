@@ -1,24 +1,24 @@
-import { AxiosRequestConfig, Axios as IAxios } from '@/types'
-import dispatchRequest from './dispatchRequest'
+import type { AxiosRequestConfig, Axios as IAxios } from '@/types';
+import dispatchRequest from './dispatchRequest';
 
 class Axios implements IAxios {
-  defaults: AxiosRequestConfig
+  defaults: AxiosRequestConfig;
 
   constructor(initConfig: AxiosRequestConfig) {
-    this.defaults = initConfig
+    this.defaults = initConfig;
   }
 
   request(url: string | AxiosRequestConfig, config: AxiosRequestConfig = {}): Promise<any> {
     if (typeof url === 'string') {
-      config.url = url
+      config.url = url;
     } else {
-      config = url
+      config = url;
     }
     return dispatchRequest({
       ...this.defaults,
       ...config
-    })
+    });
   }
 }
 
-export default Axios
+export default Axios;

@@ -1,10 +1,10 @@
-import Axios from './core/Axios'
-import { AxiosInstance, AxiosRequestConfig } from './types'
+import type { AxiosInstance, AxiosRequestConfig } from './types';
+import Axios from './core/Axios';
 
 function createInstance(config: AxiosRequestConfig): AxiosInstance {
-  const context = new Axios(config)
+  const context = new Axios(config);
 
-  return context as AxiosInstance
+  return context as AxiosInstance;
 }
 
 const axios = createInstance({
@@ -12,7 +12,7 @@ const axios = createInstance({
   headers: {
     'Content-Type': 'application/json'
   },
-  validateStatus: status => status >= 200 && status < 300
-})
+  validateStatus: (status: number) => status >= 200 && status < 300
+});
 
-export default axios
+export default axios;

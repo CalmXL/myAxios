@@ -1,4 +1,5 @@
-import axios from './axios'
-export * from './axios'
+import axios from './axios';
 
-export default axios
+export * from './axios';
+
+export default axios;
